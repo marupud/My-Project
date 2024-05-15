@@ -1,0 +1,38 @@
+
+<!-- <app-sign-up></app-sign-up> -->
+
+<!-- <form (ngSubmit)="usingRxjsOperators()">
+    <button type="submit">Show Results</button>
+    <div *ngFor="let result of results">
+        <h1>{{this.result}}</h1>
+    </div>
+</form> -->
+<!-- app.component.html -->
+<!-- app.component.html -->
+<div class="container">
+    <h2>Enter Details</h2>
+    <form (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <h2>Submitted Details</h2>
+    <ol class="submitted-details">
+      <li *ngFor="let detail of submittedDetails">
+        {{ detail.firstname }} {{ detail.lastname }} {{ detail.phonenumber }}
+      </li>
+    </ol>
+  </div>
+  
+  

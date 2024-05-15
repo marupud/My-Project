@@ -1,0 +1,10 @@
+<!-- app.component.html -->
+<h1>Counter</h1>
+<div>
+  <button (click)="increment()">Increment</button>
+  <button (click)="decrement()">Decrement</button>
+  <button (click)="reset()">Reset</button>
+</div>
+<div>
+  <p>Current Count: {{ count$ | async }}</p>
+</div>

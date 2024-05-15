@@ -1,0 +1,18 @@
+
+    <div class="container">
+        <h1>Welcome to Your Homepage</h1>
+        <p>Hello User, you are logged in!</p>
+        <p>This is your personalized homepage content. You can customize it as you wish.</p>
+        <a class="logout-btn" routerLink="/login">Go to Logout</a>&nbsp;
+        <a class="prime-btn" routerLink="/NgRx">NgRX Concept</a>&nbsp;
+        <a class="prime-btn" routerLink="/pipes">Pipes Concept</a>&nbsp;
+        <a class="table-btn" (click)="showTable()">Show Table</a>
+    </div>
+    <ng-template [ngIf]="ShowTable">
+        <h1>This is ng-template</h1>
+        <app-table></app-table>
+    </ng-template>
+    <div *ngIf="!ShowTable">
+        <h1>This is Div</h1>
+        <app-table></app-table>
+    </div>

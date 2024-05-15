@@ -1,0 +1,15 @@
+<form (ngSubmit)="login()" class="login-form">
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username" [(ngModel)]="username" required minlength="3" maxlength="20" #usernameInput="ngModel" class="form-input"/>
+    <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)">
+        <div class="error-message" *ngIf="usernameInput.errors && usernameInput.errors['required']">Username is required.</div>
+    </div>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" [(ngModel)]="password" required minlength="3" maxlength="20" #passwordInput="ngModel" class="form-input"/>
+    <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+        <div class="error-message" *ngIf="passwordInput.errors && passwordInput.errors['required']">Password is required.</div>
+    </div>
+    <button id="button" type="submit" class="submit-button" routerLink="/">Login</button>
+    <p class="error-message"></p>
+    <p class="success-message" *ngIf="showAlert"></p>
+</form>

@@ -1,0 +1,32 @@
+.form-container {
+    display: flex;
+}
+
+.form-left,
+.form-right {
+    flex: 1;
+    margin-right: 10px; /* Adjust the margin between forms as needed */
+}
+
+/* Optional: Adjust form styles */
+.form-left {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-right {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.content {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()">
+    <h1 class="signUp">Sign Up Page</h1>
+    <label for="username">Username:</label>
+    <input type="text" name="username" [(ngModel)]="username" required minlength="3" maxlength="20" #usernameInput="ngModel">
+    <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)">
+        <div class="error-message" *ngIf="usernameInput.errors && usernameInput.errors['required']">Username is required.</div>
+        <div class="error-message" *ngIf="usernameInput.errors && usernameInput.errors['minlength']">Username must be at least 3 characters.</div>
+        <div class="error-message" *ngIf="usernameInput.errors && usernameInput.errors['maxlength']">Username cannot exceed 20 characters.</div>
+    </div>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" [(ngModel)]="password" minlength="3" maxlength="20" required #passwordInput="ngModel">
+    <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+        <div class="error-message" *ngIf="passwordInput.errors && passwordInput.errors['required']">Password is required.</div>
+        <div class="error-message" *ngIf="passwordInput.errors && passwordInput.errors['minlength']">Password must be at least 3 characters.</div>
+        <div class="error-message" *ngIf="passwordInput.errors && passwordInput.errors['maxlength']">Password cannot exceed 20 characters.</div>
+    </div>
+
+    <label for="password_confirmation">Confirm Password:</label>
+    <input type="password" name="password_confirmation" [(ngModel)]="passwordConfirmation" minlength="3" maxlength="20" required #passwordConfirmationInput="ngModel">
+    <div *ngIf="passwordConfirmationInput.invalid && (passwordConfirmationInput.dirty || passwordConfirmationInput.touched)">
+        <div class="error-message" *ngIf="passwordConfirmationInput.errors && passwordConfirmationInput.errors['required']">Confirm Password is required.</div>
+        <div class="error-message" *ngIf="passwordConfirmationInput.errors && passwordConfirmationInput.errors['minlength']">Confirm Password must be at least 3 characters.</div>
+        <div class="error-message" *ngIf="passwordConfirmationInput.errors && passwordConfirmationInput.errors['maxlength']">Confirm Password cannot exceed 20 characters.</div>
+        <div class="error-message" *ngIf="passwordConfirmationInput.value !== passwordInput.value">Passwords do not match.</div>
+    </div>
+
+    <button class="submit" type="submit">Sign Up</button>
+    <p class="error-message">{{this.statusMessage}}</p>
+    <p class="success-message" *ngIf="showAlert">{{this.alertMessage}}</p>
+    <span *ngIf="userExists"><p style="color:blue">User already created ? please</p><a routerLink="/login">Login</a></span>
+</form>
